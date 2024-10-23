@@ -29,7 +29,7 @@ async def updateUser(user_id: int = Path(ge=1, le=100, description='Enter User I
 
 
 @app.delete('/user/{user_id}')
-async def deleteUser(user_id: str) -> str:
+async def deleteUser(user_id: int) -> str:
     users.pop(user_id)
     return f'User with {user_id} was deleted.'
 
